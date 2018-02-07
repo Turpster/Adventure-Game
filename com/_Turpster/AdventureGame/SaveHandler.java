@@ -29,9 +29,7 @@ public class SaveHandler
             game.setCharacter((Character)save.readObject());
         }
         catch (ClassNotFoundException | IOException ex2) {
-            final Exception ex;
-            final Exception e = ex;
-            e.printStackTrace();
+            ex2.printStackTrace();
         }
     }
     
@@ -54,9 +52,7 @@ public class SaveHandler
             game.setCharacter((Character)save.readObject());
         }
         catch (ClassNotFoundException | IOException ex2) {
-            final Exception ex;
-            final Exception e = ex;
-            e.printStackTrace();
+            ex2.printStackTrace();
         }
     }
     

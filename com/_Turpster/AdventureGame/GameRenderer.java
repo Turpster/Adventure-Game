@@ -216,8 +216,6 @@ public class GameRenderer
             }
         }
         catch (StreamCorruptedException | ClassCastException ex2) {
-            final Exception ex;
-            final Exception e = ex;
             this.game.getLogger().log(Level.SEVERE, "Invalid Save.");
         }
     }

@@ -31,8 +31,6 @@ public class Commands extends CommandExecutor
                     this.game.getSh().loadGame(this.game, args[0]);
                 }
                 catch (StreamCorruptedException | ClassCastException ex2) {
-                    final Exception ex;
-                    final Exception e = ex;
                     this.game.getLogger().log(Level.SEVERE, "Invalid Save.");
                 }
             }
