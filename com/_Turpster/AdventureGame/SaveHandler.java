@@ -27,6 +27,7 @@ public class SaveHandler
             final FileInputStream saveFile = new FileInputStream("gamesave.dat");
             final ObjectInputStream save = new ObjectInputStream(saveFile);
             game.setCharacter((Character)save.readObject());
+            save.close();
         }
         catch (ClassNotFoundException | IOException ex2) {
             ex2.printStackTrace();
@@ -50,6 +51,7 @@ public class SaveHandler
             final FileInputStream saveFile = new FileInputStream(datafile);
             final ObjectInputStream save = new ObjectInputStream(saveFile);
             game.setCharacter((Character)save.readObject());
+            save.close();
         }
         catch (ClassNotFoundException | IOException ex2) {
             ex2.printStackTrace();

@@ -1,12 +1,20 @@
 package com._Turpster.AdventureGame;
 
-import com._Turpster.AdventureGame.Runnable.*;
-import java.awt.image.*;
-import com._Turpster.AdventureGame.GameBox.*;
-import java.awt.*;
-import java.util.logging.*;
-import java.io.*;
-import javax.swing.*;
+import java.awt.AlphaComposite;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.io.File;
+import java.io.StreamCorruptedException;
+import java.util.logging.Level;
+
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
+import com._Turpster.AdventureGame.GameBox.BoxPurpose;
+import com._Turpster.AdventureGame.Runnable.TurpRunnable;
 
 public class GameRenderer
 {

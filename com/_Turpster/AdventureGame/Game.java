@@ -1,15 +1,22 @@
 package com._Turpster.AdventureGame;
 
-import java.util.logging.*;
-import com._Turpster.AdventureGame.GameBox.*;
-import java.util.*;
-import com._Turpster.AdventureGame.Level.*;
-import java.awt.event.*;
-import java.awt.image.*;
-import java.awt.*;
+import java.awt.AlphaComposite;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+import java.awt.image.BufferStrategy;
+import java.util.ArrayList;
+import java.util.logging.Logger;
 
+import com._Turpster.AdventureGame.GameBox.GameBoxHandler;
+import com._Turpster.AdventureGame.Level.Intro;
 import com._Turpster.AdventureGame.Level.Level;
-import com._Turpster.AdventureGame.Runnable.*;
+import com._Turpster.AdventureGame.Runnable.TurpRunnable;
 
 public class Game extends Canvas implements Runnable
 {
@@ -23,10 +30,8 @@ public class Game extends Canvas implements Runnable
     private double frames;
     public int WIDTH;
     public int HEIGHT;
-    private static String NAME;
     private String Commands;
     private String commandFeedback;
-    private Window window;
     public static MenuType mt;
     private Handler handler;
     private Commands commands;
@@ -39,12 +44,10 @@ public class Game extends Canvas implements Runnable
     private GameRenderer menu;
     private MouseInput MI;
     private KeyboardInput KI;
-    private ArrayList<Character> loadedCharacters;
     Character character;
     private boolean debug;
     
     static {
-        Game.NAME = "Unknown Adventure Game";
     }
     
     public Level getLevel() {
@@ -153,7 +156,7 @@ public class Game extends Canvas implements Runnable
         this.HEIGHT = 600;
         this.Commands = "> ";
         this.commandFeedback = "";
-        this.loadedCharacters = new ArrayList<Character>();
+        new ArrayList<Character>();
         this.character = null;
         this.debug = true;
         this.WIDTH = (int)Toolkit.getDefaultToolkit().getScreenSize().getWidth();
@@ -168,7 +171,7 @@ public class Game extends Canvas implements Runnable
         this.gui = new GUI(this);
         this.fade = new Fade(this);
         this.spashscreen = true;
-        this.window = new Window(this.WIDTH, this.HEIGHT, "Adventure Game", this);
+        new Window(this.WIDTH, this.HEIGHT, "Adventure Game", this);
         this.handler = new Handler(this);
         this.spashscreen = false;
         this.MI = new MouseInput(this);

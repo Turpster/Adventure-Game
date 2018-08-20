@@ -68,8 +68,8 @@ public abstract class Level
                 g.fillPolygon(polygon);
             }
         }
-        for (final Entity entity : this.entitys) {
-            final boolean b = entity instanceof Player;
+        for (final Entity entity : this.entitys)
+        {
             entity.render(g);
         }
     }

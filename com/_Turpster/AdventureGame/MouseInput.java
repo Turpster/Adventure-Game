@@ -15,7 +15,8 @@ public class MouseInput extends MouseAdapter
         super.mousePressed(e);
     }
     
-    @Override
+    @SuppressWarnings("deprecation")
+	@Override
     public void mouseReleased(final MouseEvent e) {
         if (this.game.getGBH().getGameBoxes().isEmpty()) {
             super.mouseReleased(e);

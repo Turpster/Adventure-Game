@@ -1,7 +1,6 @@
 package com._Turpster.AdventureGame;
 
 import com._Turpster.AdventureGame.Entitys.*;
-import java.util.*;
 import java.awt.*;
 
 public class Camera implements Renderable, Tickable
