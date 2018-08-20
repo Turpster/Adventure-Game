@@ -4,12 +4,16 @@ import java.awt.AlphaComposite;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GraphicsEnvironment;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.image.BufferStrategy;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
@@ -151,6 +155,18 @@ public class Game extends Canvas implements Runnable
     }
     
     public Game() {
+    	
+    	try {
+    	    //create the font to use. Specify the size!
+    	    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    	    //register the font
+    	    ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("dotumche-pixel.ttf")));
+    	} catch (IOException e) {
+    	    e.printStackTrace();
+    	} catch(FontFormatException e) {
+    	    e.printStackTrace();
+    	}
+    	
         this.level = null;
         this.WIDTH = 800;
         this.HEIGHT = 600;
